@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>d77b62dd-b729-423a-b169-4f91c8a46dca</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.15" />
+    <PackageReference Include="MimeKit" Version="4.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.14" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.12" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.26.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.7.4" />
+  </ItemGroup>
+   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Services\" />
+    <None Remove="Services\Payment\" />
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\Interfaces\" />
+    <None Remove="Utils\" />
+    <None Remove="Utils\Config\" />
+    <None Remove="Utils\Base\" />
+    <None Remove="Utils\Base\Models\" />
+    <None Remove="Utils\Extensions\" />
+    <None Remove="Utils\VnPay\" />
+    <None Remove="Utils\Paging\" />
+    <None Remove="Services\Interfaces\" />
+    <None Remove="Services\UnitOfWork\" />
+    <None Remove="Services\Implementation\" />
+    <None Remove="Services\Implementation\Payment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Interfaces\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Utils\Config\" />
+    <Folder Include="Utils\Base\" />
+    <Folder Include="Utils\Base\Models\" />
+    <Folder Include="Utils\Extensions\" />
+    <Folder Include="Utils\VnPay\" />
+    <Folder Include="Utils\Paging\" />
+    <Folder Include="Services\UnitOfWork\" />
+    <Folder Include="Services\Implementation\Payment\" />
+  </ItemGroup>
+</Project>
